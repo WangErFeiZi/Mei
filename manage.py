@@ -80,7 +80,7 @@ def deploy():
     upgrade()
     Role.insert_roles()
     User.add_self_follows()
-
+    """
     u = User.query.filter_by(email='a35486882@qq.com').first()
     if u is None:
         u = User(email='a35486882@qq.com', password='l19910305', confirmed=True,
@@ -88,6 +88,7 @@ def deploy():
         db.session.add(u)
         db.session.commit()
         u.add_self_follows()
+    """
 
 
 @manager.command
