@@ -81,6 +81,19 @@ def deploy():
     Role.insert_roles()
     User.add_self_follows()
 
+    u = User.query.filter_by(email='a35486882@qq.com').first()
+    if u is None:
+        u = User(email='a35486882@qq.com', password='l19910305', confirmed=True,
+            username='梅酱', role=Role.query.filter_by(name='Administrator'))
+        db.session.add(u)
+        db.session.commit()
+        u.add_self_follows()
+
+
+@manager.command
+def drop_db():
+    db.drop_all()
+
 
 if __name__ == '__main__':
     manager.run()
