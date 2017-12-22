@@ -84,7 +84,7 @@ def deploy():
     u = User.query.filter_by(email='a35486882@qq.com').first()
     if u is None:
         u = User(email='a35486882@qq.com', password='l19910305', confirmed=True,
-            username='梅酱', role=Role.query.filter_by(name='Administrator'))
+            username='MeiTyan', role=Role.query.filter_by(name='Administrator'))
         db.session.add(u)
         db.session.commit()
         u.add_self_follows()
