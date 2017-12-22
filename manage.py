@@ -66,6 +66,13 @@ def profile(length=25, profile_dir=None):
 
 
 @manager.command
+def clearAlembic():
+    # from flask_migrate import upgrade
+    from app.models import Alembic
+    Alembic.clear_A()
+
+
+@manager.command
 def deploy():
     """Run depolyment tasks"""
     from flask_migrate import upgrade
