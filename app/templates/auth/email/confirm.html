@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>
+        你好，{{ user.username }},
+        欢迎来到梅酱的炼金工坊。
+        点击该链接验证账号：
+        {{ url_for('auth.confirm', token=token, _external=True) }}
+        以上。
+        梅酱炼金工坊为你服务。
+        PS：请勿回复该邮件。
+    </h1>
+</body>
+</html>
